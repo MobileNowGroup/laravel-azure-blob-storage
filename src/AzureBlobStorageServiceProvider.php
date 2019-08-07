@@ -36,10 +36,11 @@ class AzureBlobStorageServiceProvider extends ServiceProvider
             elseif (!empty($config['local_address']) && $config['local_address'] != 'local')
             {
                 $endpoint = sprintf(
-                    'DefaultEndpointsProtocol=http;AccountName=%s;AccountKey=%s;BlobEndpoint=%s;',
+                    'DefaultEndpointsProtocol=http;AccountName=%s;AccountKey=%s;BlobEndpoint=%s;%s',
                     $config['name'],
                     $config['key'],
-                    $config['local_address']
+                    $config['local_address'],
+                    $config['endpoint_suffix']
                 );
             }
             else
