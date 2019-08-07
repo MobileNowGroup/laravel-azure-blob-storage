@@ -46,9 +46,10 @@ class AzureBlobStorageServiceProvider extends ServiceProvider
             else
             {
                 $endpoint = sprintf(
-                    'DefaultEndpointsProtocol=https;AccountName=%s;AccountKey=%s;',
+                    'DefaultEndpointsProtocol=https;AccountName=%s;AccountKey=%s;%s',
                     $config['name'],
-                    $config['key']
+                    $config['key'],
+                    $config['endpoint_suffix']
                 );
 
                 /*
